@@ -1,1 +1,49 @@
-<p>overview works!</p>
+<div class="overview-page">
+  <h2>👁️‍🗨️ System Overview</h2>
+
+  <div class="stats-grid">
+    <div class="card">
+      <span class="icon">🏠</span>
+      <h3>{{ stats.houses }}</h3>
+      <p>Houses</p>
+    </div>
+    <div class="card">
+      <span class="icon">🚪</span>
+      <h3>{{ stats.rooms }}</h3>
+      <p>Rooms</p>
+    </div>
+    <div class="card">
+      <span class="icon warning">⚠️</span>
+      <h3>{{ stats.unsafeRooms }}</h3>
+      <p>Unsafe Rooms</p>
+    </div>
+    <div class="card">
+      <span class="icon alert">🔔</span>
+      <h3>{{ stats.alertsToday }}</h3>
+      <p>Alerts Today</p>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <div class="recent">
+      <h3>⚠️ Recent Alerts</h3>
+      <p *ngIf="recentAlerts.length === 0">No recent alerts.</p>
+      <ul *ngIf="recentAlerts.length > 0">
+        <li *ngFor="let alert of recentAlerts">
+          🚨 {{ alert.room }} – {{ alert.level }} ppm
+          <span>{{ alert.time }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="recent">
+      <h3>📢 Announcements</h3>
+      <p *ngIf="announcements.length === 0">No announcements yet.</p>
+      <ul *ngIf="announcements.length > 0">
+        <li *ngFor="let ann of announcements">
+          📢 {{ ann.title }} <span>{{ ann.time }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
