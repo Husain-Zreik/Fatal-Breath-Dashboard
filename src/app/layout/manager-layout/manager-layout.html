@@ -1,5 +1,17 @@
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
-<main class="main-content">
-  <router-outlet></router-outlet>
-</main>
+<div class="manager-container">
+  <app-sidebar [isOpen]="isSidebarOpen" [closeSidebar]="closeSidebar.bind(this)">
+  </app-sidebar>
+
+  <!-- Mobile overlay -->
+  <div class="overlay" *ngIf="isSidebarOpen && innerWidth <= 768" (click)="closeSidebar()">
+  </div>
+
+  <main class="main-content">
+    <app-navbar [isOpen]="isSidebarOpen" [toggleSidebar]="toggleSidebar.bind(this)">
+    </app-navbar>
+
+    <div class="main-inner">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

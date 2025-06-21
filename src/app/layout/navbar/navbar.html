@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<nav class="manager-navbar">
+  <button class="sidebar-toggle" (click)="toggleSidebar()"
+    [attr.aria-label]="isOpen ? 'Close sidebar' : 'Open sidebar'">
+    <fa-icon [icon]="isOpen ? 'times' : 'bars'"></fa-icon>
+  </button>
+
+  <div class="navbar-content">
+    <h2 class="page-title">Dashboard</h2>
+
+    <div class="navbar-actions">
+      <div class="user-profile">
+        <span>Manager</span>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FontAwesomeModule], // Import FontAwesomeModule here
   templateUrl: './navbar.html',
-  styleUrl: './navbar.scss'
+  styleUrls: ['./navbar.scss'],
 })
 export class Navbar {
+  @Input() isOpen = false;
+  @Input() toggleSidebar!: () => void;
 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faBars, faTimes);
+  }
 }

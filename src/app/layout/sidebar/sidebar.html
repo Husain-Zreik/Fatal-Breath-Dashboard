@@ -1,1 +1,20 @@
-<p>sidebar works!</p>
+<aside class="sidebar" [class.open]="isOpen">
+  <h1 class="sidebar-logo">Fatal Breath</h1>
+  <nav>
+    <div class="sidebar-section">
+      <h3>Dashboard</h3>
+      <a routerLink="/overview" [class.active]="isActive('/overview')" (click)="handleLinkClick()">
+        <fa-icon [icon]="faTachometerAlt" class="icon"></fa-icon>
+        Overview
+      </a>
+      <a routerLink="/houses" [class.active]="isActive('/houses')" (click)="handleLinkClick()">
+        <fa-icon [icon]="faHome" class="icon"></fa-icon>
+        Houses
+      </a>
+      <a routerLink="/users" [class.active]="isActive('/users')" (click)="handleLinkClick()">
+        <fa-icon [icon]="faUser" class="icon"></fa-icon>
+        Users
+      </a>
+    </div>
+  </nav>
+</aside>
