@@ -1,0 +1,31 @@
+@use "../../variables" as variables;
+
+.user-page-wrapper {
+  @media (max-width: variables.$breakpoint-md) {
+    padding: 15px;
+    margin-left: 0;
+  }
+
+  .user-header {
+    margin-bottom: 20px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      .user-header .ant-row > div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .ant-btn {
+    background-color: variables.$primary;
+    color: variables.$quaternary;
+  }
+  .user-table-wrapper {
+    background-color: variables.$quaternary;
+    padding: 20px;
+    border-radius: 10px;
+
+    @media (max-width: variables.$breakpoint-md) {
+      padding: 10px;
+    }
+  }
+}

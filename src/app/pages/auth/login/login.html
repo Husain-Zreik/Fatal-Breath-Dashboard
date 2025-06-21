@@ -1,0 +1,56 @@
+<div class="login-page-container">
+  <!-- Branding Section -->
+  <div class="branding-section">
+    <div class="branding-content">
+      <h1 class="branding-title">FATAL BREATH</h1>
+      <h2 class="branding-subtitle">Your Guardian Angel Against Toxic Gases!</h2>
+      <p class="branding-text">
+        Protect your family from the silent killer with FatalBreath.
+      </p>
+    </div>
+  </div>
+
+  <!-- Login Form Section -->
+  <div class="form-section">
+    <div class="login-form-wrapper">
+      <form (ngSubmit)="handleSubmit()">
+        <h1>Login</h1>
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+        <div class="input-box">
+          <input
+            id="username"
+            type="text"
+            [(ngModel)]="username"
+            name="username"
+            placeholder="Username"
+            required
+          />
+        </div>
+
+        <div class="input-box">
+          <input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <button type="submit" [disabled]="loading">
+          {{ loading ? 'Logging in...' : 'Login' }}
+        </button>
+
+        <div class="register-link">
+          <p>
+            Don't have an account?
+            <a href="/register" (click)="goToSignUp()">Register</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

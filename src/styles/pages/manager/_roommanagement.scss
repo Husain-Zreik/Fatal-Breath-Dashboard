@@ -1,0 +1,28 @@
+@use "../../variables" as variables;
+.room-page-wrapper {
+  
+  background-color: variables.$light-background;
+  min-height: 100vh;
+  font-family: variables.$font-family;
+  height: fit-content;
+  min-width: 80rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.room-header {
+  margin-bottom: 20px;
+ 
+}
+.ant-btn{
+    padding-right: 40px ;
+    background-color: variables.$primary;
+}
+.room-table-wrapper {
+  background: variables.$quaternary;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}

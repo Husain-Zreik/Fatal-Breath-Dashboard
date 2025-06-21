@@ -1,0 +1,54 @@
+@use "variables" as variables;
+
+// ============================
+// RESET DEFAULT STYLES
+// ============================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// ============================
+// GLOBAL STYLES
+// ============================
+html {
+  font-family: variables.$font-family;
+  font-size: variables.$font-size-base;
+
+  // Media queries for responsive font size adjustments
+  @media (max-width: variables.$breakpoint-md) {
+    font-size: variables.$font-size-md;
+  }
+  @media (max-width: variables.$breakpoint-sm) {
+    font-size: variables.$font-size-sm;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Dark mode styles
+  &.dark {
+    color: variables.$dark-text;
+    background-color: variables.$dark-background;
+  }
+
+  // Light mode styles
+  &.light {
+    color: variables.$light-text;
+    background-color: variables.$light-background;
+  }
+}
+
+// ============================
+// LINK STYLES
+// ============================
+a {
+  text-decoration: none;
+}

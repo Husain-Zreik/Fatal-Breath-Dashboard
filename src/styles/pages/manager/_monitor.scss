@@ -1,0 +1,79 @@
+@use "../../variables" as variables;
+
+.real-time-monitoring {
+  h2 {
+    text-align: center;
+    color: variables.$primary;
+    margin-bottom: 30px;
+  }
+
+  .houses-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .house-card {
+      background-color: variables.$light-background-secondary;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+      h3 {
+        margin-bottom: 15px;
+        color: variables.$secondary;
+        font-weight: 600;
+      }
+
+      .rooms-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .room-card {
+          background-color: variables.$light-background;
+          border: 1px solid variables.$light-background-tertiary;
+          padding: 15px 20px;
+          border-radius: 8px;
+          min-width: 180px;
+          text-align: center;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+          h4 {
+            margin-bottom: 8px;
+            color: variables.$light-text-secondary;
+          }
+
+          p {
+            font-size: variables.$font-size-md;
+            margin-bottom: 6px;
+            color: variables.$light-text;
+          }
+
+          .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: variables.$quaternary;
+            font-weight: bold;
+            display: inline-block;
+            font-size: variables.$font-size-sm;
+          }
+
+          &.safe .status {
+            background-color: variables.$success;
+          }
+
+          &.danger .status {
+            background-color: variables.$danger;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: variables.$breakpoint-md) {
+    .rooms-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@use "../../variables" as variables;
+
+.room-view-container {
+  h2 {
+    text-align: center;
+    font-size: variables.$font-size-xl;
+    font-weight: 700;
+    color: variables.$primary;
+    margin-bottom: 24px;
+  }
+
+  .add-room-button {
+    display: block;
+    margin: 0 auto 24px auto;
+    width: 220px;
+    font-size: variables.$font-size-base;
+    font-weight: 600;
+    background-color: variables.$secondary;
+    border-color: variables.$secondary;
+
+    &:hover {
+      background-color: variables.$tertiary;
+      border-color: variables.$tertiary;
+      color: variables.$quinary;
+    }
+  }
+
+  .ant-table-wrapper {
+    border-radius: 8px;
+    background-color: variables.$quaternary;
+    box-shadow: 0 2px 8px rgba(0, 39, 102, 0.05);
+    font-size: variables.$font-size-base;
+  }
+
+  .ant-table {
+    font-size: variables.$font-size-lg;
+    color: variables.$light-text;
+  }
+
+  .ant-table-thead > tr > th {
+    background-color: variables.$light-background-tertiary;
+    color: variables.$primary;
+    font-weight: 600;
+    text-align: center;
+    font-size: variables.$font-size-lg;
+  }
+
+  .ant-table-tbody > tr > td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: variables.$font-size-base;
+  }
+
+  .ant-table-tbody > tr:hover > td {
+    background-color: variables.$light-background-quaternary;
+  }
+
+  .delete-icon {
+    color: variables.$danger;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: darken(variables.$danger, 10%);
+    }
+  }
+
+  .ant-modal-content {
+    border-radius: 10px;
+    font-family: variables.$font-family;
+  }
+
+  .ant-form-item-label > label {
+    font-weight: 600;
+    color: variables.$light-text-secondary;
+    font-size: variables.$font-size-base;
+  }
+
+  .ant-btn-primary {
+    background-color: variables.$primary;
+    border-color: variables.$primary;
+
+    &:hover,
+    &:focus {
+      background-color: variables.$secondary;
+      border-color: variables.$secondary;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+@use "../../variables" as variables;
+
+.house-management-container {
+  .house-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 24px;
+
+    input {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .ant-btn {
+      min-width: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: variables.$primary;
+      color: variables.$quaternary;
+
+      &:hover {
+        background-color: darken(variables.$primary, 5%);
+      }
+    }
+
+    @media (max-width: variables.$breakpoint-md) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+.ant-table {
+  background-color: variables.$quaternary;
+  border-radius: 10px;
+  overflow-x: auto;
+
+  .ant-table-thead > tr > th {
+    background-color: variables.$primary;
+    color: variables.$quaternary;
+    white-space: nowrap;
+  }
+
+  .ant-table-tbody > tr > td {
+    background-color: variables.$light-background-secondary;
+    word-break: break-word;
+  }
+}
+
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}

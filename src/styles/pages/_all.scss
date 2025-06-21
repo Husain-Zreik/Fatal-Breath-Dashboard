@@ -1,0 +1,11 @@
+// Admin Pages
+@forward "./admin/users";
+
+// Manager Pages
+@forward "./manager/all";
+
+// Common Pages
+@forward "./common/dashboard";
+
+// Auth Pages
+@forward "./auth/all";

@@ -1,0 +1,80 @@
+@use "../../variables" as variables;
+
+.gas-analytics-container {
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: variables.$primary;
+  }
+
+  .cards-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    .room-card {
+      background-color: variables.$light-background-secondary;
+      border: 1px solid variables.$light-background-tertiary;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px variables.$quinary;
+      min-width: 200px;
+      text-align: center;
+
+      h4 {
+        margin-bottom: 10px;
+        color: variables.$secondary;
+      }
+
+      p {
+        margin: 4px 0;
+      }
+
+      .safe {
+        color: variables.$success;
+      }
+
+      .danger {
+        color: variables.$danger;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .charts-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+    .chart {
+      background: variables.$quaternary;
+      border: 1px solid variables.$quaternary;
+      border-radius: 8px;
+      padding: 20px;
+      width: 500px;
+      max-width: 100%;
+      box-shadow: 0 2px 5px variables.$quinary;
+
+      h3 {
+        text-align: center;
+        margin-bottom: 15px;
+        color: variables.$light-text-secondary;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .charts-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cards-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

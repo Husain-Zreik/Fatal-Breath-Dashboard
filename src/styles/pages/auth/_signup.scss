@@ -1,0 +1,156 @@
+@use "../../variables" as variables;
+
+.wrapper {
+  max-width: 520px;
+  width: 100%;
+  background: variables.$light-background-secondary;
+  border: 2px solid rgba(variables.$primary, 0.2);
+  box-shadow: 0 0 15px rgba(variables.$primary, 0.15);
+  color: variables.$light-text;
+  border-radius: 12px;
+  padding: 35px 40px;
+  margin: 50px 40px;
+
+  @media (max-width: variables.$breakpoint-md) {
+    flex-direction: column;
+    padding: 25px 20px;
+    margin: 20px auto;
+  }
+
+  .title {
+    text-align: center;
+    color: variables.$primary;
+    margin-bottom: 20px;
+    // text-shadow: 0 2px 4px variables.$dark-background;
+    font-weight: 600;
+    @media (max-width: variables.$breakpoint-sm) {
+      font-size: variables.$font-size-base;
+    }
+  }
+
+  .input-box {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    margin: 20px 0;
+    @media (max-width: variables.$breakpoint-sm) {
+      margin: 15px 0;
+    }
+  }
+
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    background: variables.$quaternary;
+    outline: none;
+    border: 2px solid rgba(variables.$primary, 0.2);
+    border-radius: 8px;
+    color: variables.$light-text;
+    padding: 20px 45px 20px 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-size: variables.$font-size-base;
+    font-family: variables.$font-family;
+  }
+
+  .input-box input:focus {
+    border-color: variables.$secondary;
+    box-shadow: 0 0 0 3px variables.$light-background-quaternary;
+  }
+
+  .input-box input::placeholder {
+    color: variables.$dark-background-tertiary;
+    opacity: 0.8;
+  }
+
+  .input-box .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: variables.$secondary;
+  }
+
+  .terms {
+    display: flex;
+    font-size: variables.$font-size-sm;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: variables.$light-text-secondary;
+    flex-direction: column;
+    align-items: flex-start;
+    @media (max-width: variables.$breakpoint-sm) {
+      font-size: variables.$font-size-xs;
+    }
+
+    .terms label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .terms a {
+      color: variables.$secondary;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .terms a:hover {
+      text-decoration: underline;
+    }
+  }
+  .button {
+    width: 100%;
+    padding: 0.65rem;
+    background: linear-gradient(
+      135deg,
+      variables.$tertiary,
+      variables.$secondary
+    );
+    color: variables.$quaternary;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: variables.$font-size-base;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: variables.$font-family;
+
+    .button:hover {
+      background: linear-gradient(
+        135deg,
+        variables.$secondary,
+        variables.$primary
+      );
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px variables.$light-background-quaternary;
+    }
+    @media (max-width: variables.$breakpoint-sm) {
+      font-size: variables.$font-size-sm;
+    }
+  }
+
+  .login-link {
+    font-size: variables.$font-size-sm;
+    text-align: center;
+    margin: 25px 0 10px;
+    color: variables.$light-text-secondary;
+
+    .login-link p a {
+      color: variables.$secondary;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .login-link p a:hover {
+      text-decoration: underline;
+      @media (max-width: variables.$breakpoint-sm) {
+        font-size: variables.$font-size-sm;
+      }
+    }
+  }
+}
