@@ -1,0 +1,534 @@
+<!-- Navigation -->
+<nav id="navbar" class="navbar navbar-expand-lg  ">
+  <div class="container">
+
+    <a class="navbar-brand" href="#"><img src="/assets/images/logo.svg" alt="logo" width="250"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#features">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#protection">Protection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#screens">Screens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#team">Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <button (click)="goToLogin()" class="btn btn-danger btn ms-2">
+        Login
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-4">Your Guardian Angel Against Toxic Gases</h1>
+    <p class="lead mb-5">Protecting your family from the silent threat of carbon monoxide and other dangerous
+      gases</p>
+    <button (click)="goToLogin()" class="btn btn-danger btn-lg me-2">
+      Get Started
+    </button>
+    <button class="btn btn-outline-light btn-lg">Learn More</button>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Features</h2>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <h3>Why Fatal Breath?</h3>
+        <p>Fatal Breath is a powerful application designed to protect your family from the silent threat of
+          toxic gases such as carbon monoxide (CO). With its intuitive features and responsive alerts,
+          Fatal Breath acts as your home's guardian angel, ensuring you are informed and safe at all
+          times.</p>
+        <p>The primary purpose of Fatal Breath is to significantly reduce deaths caused by high
+          concentrations of toxic gases in homes. The app provides real-time monitoring of rooms,
+          instantly alerting users if CO levels rise above safe thresholds.</p>
+
+        <div class="alert alert-danger mt-4">
+          <h4 class="alert-heading">Did you know?</h4>
+          <p>Carbon monoxide poisoning causes over 400 deaths and 20,000 emergency room visits each year
+            in the US alone.</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Carousel -->
+        <div id="featuresCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#featuresCarousel" data-bs-slide-to="2"></button>
+          </div>
+          <div class="carousel-inner rounded">
+            <div class="carousel-item active">
+              <img src="assets/images/alert.png" class="d-block w-100" alt="CO Detector">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Real-time Monitoring</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                class="d-block w-100" alt="Mobile App">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Instant Alerts</h5>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                alt="Family Protection">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Family Safety</h5>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#featuresCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#featuresCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Protection Section -->
+<section id="protection" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center section-title">How It Protects You</h2>
+    <p class="text-center mb-5">Comprehensive safety features for complete peace of mind</p>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img-top" alt="Real-time Monitoring">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-graph-up"></i>
+            </div>
+            <h5 class="card-title">Real-time CO Monitoring</h5>
+            <p class="card-text">Continuous tracking of carbon monoxide levels in every room of your
+              home with precision sensors.</p>
+            <a href="#" class="btn btn-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img
+            src="https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img-top" alt="Instant Alerts">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-bell-fill"></i>
+            </div>
+            <h5 class="card-title">Instant Alerts</h5>
+            <p class="card-text">Immediate notifications sent to all household members when dangerous
+              levels are detected.</p>
+            <a href="#" class="btn btn-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img
+            src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img-top" alt="Emergency Chat">
+          <div class="card-body">
+            <div class="feature-icon">
+              <i class="bi bi-chat-dots-fill"></i>
+            </div>
+            <h5 class="card-title">Emergency Chat</h5>
+            <p class="card-text">Built-in communication system for quick coordination during gas
+              emergencies.</p>
+            <a href="#" class="btn btn-danger">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Screens Section with Grid Popup -->
+<section id="screens" class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">App Screens</h2>
+    <p class="text-center mb-5">Explore Fatal Breath's intuitive interface</p>
+
+    <div class="row">
+      <!-- Grid Item 1 -->
+      <div class="col-md-4 col-sm-6 grid-item" data-bs-toggle="modal" data-bs-target="#screenModal1">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Dashboard" class="img-fluid">
+        <h5 class="mt-2">Dashboard Overview</h5>
+      </div>
+
+      <!-- Grid Item 2 -->
+      <div class="col-md-4 col-sm-6 grid-item" data-bs-toggle="modal" data-bs-target="#screenModal2">
+        <img
+          src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Alert Screen" class="img-fluid">
+        <h5 class="mt-2">Alert Notification</h5>
+      </div>
+
+      <!-- Grid Item 3 -->
+      <div class="col-md-4 col-sm-6 grid-item" data-bs-toggle="modal" data-bs-target="#screenModal3">
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Room Management" class="img-fluid">
+        <h5 class="mt-2">Room Management</h5>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center section-title">User Types</h2>
+    <p class="text-center mb-5">Fatal Breath offers different access levels for complete household protection
+    </p>
+
+    <div class="row">
+      <!-- Team Member 1 -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img-top" alt="Manager">
+          <div class="card-body text-center">
+            <h5 class="card-title">Manager</h5>
+            <p class="text-muted">Homeowner/Administrator</p>
+            <p class="card-text">Managers can create houses and rooms within the app, invite others to
+              join, and have full control over all safety settings and notifications.</p>
+            <span class="badge danger-badge">Full Access</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            class="card-img-top" alt="Member">
+          <div class="card-body text-center">
+            <h5 class="card-title">Member</h5>
+            <p class="text-muted">Family/Household Member</p>
+            <p class="card-text">Members join houses created by Managers and have access to monitoring
+              features, alerts, and emergency communication tools.</p>
+            <span class="badge bg-secondary">Monitoring Access</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h2 class="display-4">24/7</h2>
+        <p>Protection</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h2 class="display-4">0.5s</h2>
+        <p>Alert Response Time</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h2 class="display-4">99.9%</h2>
+        <p>Detection Accuracy</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-4">
+        <h2 class="display-4">∞</h2>
+        <p>Peace of Mind</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Table -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center section-title">Key Features</h2>
+    <p class="text-center mb-5">Comprehensive protection against toxic gases</p>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-danger">
+          <tr>
+            <th>Feature</th>
+            <th>Description</th>
+            <th>Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Real-time CO Monitoring</td>
+            <td>Continuous tracking of carbon monoxide levels</td>
+            <td>Always know your air quality</td>
+          </tr>
+          <tr>
+            <td>Instant Alerts</td>
+            <td>Immediate notifications when danger is detected</td>
+            <td>Quick response to emergencies</td>
+          </tr>
+          <tr>
+            <td>Emergency Chat</td>
+            <td>Built-in communication for emergencies</td>
+            <td>Coordinate safety measures quickly</td>
+          </tr>
+          <tr>
+            <td>Multi-Room Management</td>
+            <td>Monitor multiple rooms simultaneously</td>
+            <td>Whole-home protection</td>
+          </tr>
+          <tr>
+            <td>User Management</td>
+            <td>Add/remove users with different access levels</td>
+            <td>Flexible household access</td>
+          </tr>
+          <tr>
+            <td>Friendly UI</td>
+            <td>Intuitive, easy-to-use interface</td>
+            <td>Simple for all family members</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-danger mt-4">
+      <p class="mb-0">Carbon monoxide is called the "silent killer" because it's colorless, odorless, and can
+        be deadly before symptoms are noticed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="text-center section-title">Contact Us</h2>
+    <p class="text-center mb-5">Get in touch to learn more about protecting your family</p>
+
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="needs-validation" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone">
+          </div>
+          <div class="mb-3">
+            <label for="interest" class="form-label">I'm interested in</label>
+            <select class="form-select" id="interest">
+              <option selected>Select an option</option>
+              <option>Home Protection</option>
+              <option>Business Solutions</option>
+              <option>Technical Support</option>
+              <option>Partnership Opportunities</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <div class="card h-100">
+          <div class="card-body">
+            <h4 class="card-title">Our Office</h4>
+            <p class="card-text"><i class="bi bi-geo-alt-fill me-2"></i> 123 Safety Way, Protect City,
+              PC 12345</p>
+            <p class="card-text"><i class="bi bi-telephone-fill me-2"></i> (555) 123-4567</p>
+            <p class="card-text"><i class="bi bi-envelope-fill me-2"></i> info-fatalbreath.com</p>
+            <p class="card-text"><i class="bi bi-clock-fill me-2"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
+
+            <div class="mt-4">
+              <h5>Follow Us</h5>
+              <div class="d-flex gap-3">
+                <a href="#" class="text-danger"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="text-danger"><i class="bi bi-twitter fs-4"></i></a>
+                <a href="#" class="text-danger"><i class="bi bi-linkedin fs-4"></i></a>
+                <a href="#" class="text-danger"><i class="bi bi-instagram fs-4"></i></a>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291118!2d-73.9878449241646!3d40.74844097138985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689876423587!5m2!1sen!2sus"
+                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>Fatal Breath</h5>
+        <p>Your guardian angel against toxic gases</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="text-white">Home</a></li>
+          <li><a href="#features" class="text-white">Features</a></li>
+          <li><a href="#protection" class="text-white">Protection</a></li>
+          <li><a href="#contact" class="text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Newsletter</h5>
+        <form>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="Your Email">
+            <button class="btn btn-danger" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr class="my-4 bg-light">
+    <p class="mb-0">Fatal Breath © 2023 | All rights reserved. <a href="#" class="text-white">Privacy Policy</a>
+      | <a href="#" class="text-white">Terms & Conditions</a></p>
+  </div>
+</footer>
+
+<!-- Screen Modals -->
+<!-- Modal 1 -->
+<div class="modal fade" id="screenModal1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Dashboard Overview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Dashboard" class="modal-img mb-3">
+        <p>The Fatal Breath dashboard provides a comprehensive overview of your home's air quality at a
+          glance. Quickly see which rooms are safe and which need attention with our color-coded system.
+        </p>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Real-time CO levels for each room</li>
+          <li>Color-coded safety indicators</li>
+          <li>Quick access to room details</li>
+          <li>Emergency contact shortcut</li>
+          <li>Family status overview</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="screenModal2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Alert Notification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Alert Screen" class="modal-img mb-3">
+        <p>When dangerous CO levels are detected, Fatal Breath immediately notifies all household members
+          with clear, actionable alerts. The app provides specific instructions based on the severity of
+          the situation.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Loud audible alarm (override silent mode)</li>
+          <li>Visual flashing alert</li>
+          <li>Specific danger location</li>
+          <li>Recommended actions</li>
+          <li>One-tap emergency call</li>
+          <li>Quick access to family chat</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="screenModal3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Room Management</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          alt="Room Management" class="modal-img mb-3">
+        <p>Easily manage all rooms in your home with our intuitive interface. Add new rooms, set specific
+          alert thresholds, and view historical data for comprehensive protection.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Add/remove rooms with ease</li>
+          <li>Customizable alert thresholds</li>
+          <li>Historical CO level graphs</li>
+          <li>Device battery status monitoring</li>
+          <li>Room-specific notes</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

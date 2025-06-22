@@ -1,0 +1,98 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+}
+
+.bg-light {
+  background-color: rgb(185, 185, 185); /* White with 80% opacity */
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/assets/images/alert.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 40px;
+  color: #dc3545; /* --primary-color */
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ff6b6b; /* --secondary-color */
+}
+
+.card {
+  transition: transform 0.3s;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #dc3545; /* --primary-color */
+  margin-bottom: 15px;
+}
+
+.contact-section {
+  // background-color: #f8f9fa; /* --light-color */
+  padding: 80px 0;
+}
+
+footer {
+  background-color: #282828; /* --dark-color */
+  color: white;
+  padding: 30px 0;
+}
+
+.grid-item {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Modal styles */
+.modal-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.danger-badge {
+  background-color: #dc3545; /* --primary-color */
+}
