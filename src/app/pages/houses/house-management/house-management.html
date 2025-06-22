@@ -1,18 +1,10 @@
 <div class="table-responsive position-relative">
 
-  <!-- Loading Overlay Spinner -->
+  <!-- Unified Loading Overlay -->
   <div *ngIf="isLoading" class="overlay d-flex justify-content-center align-items-center">
     <div class="spinner-border text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
-  </div>
-
-
-  <!-- Search -->
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h5 class="mb-0"></h5>
-    <input type="text" class="form-control w-auto" placeholder="Search houses..." (input)="onSearch($event)"
-      [value]="searchText" />
   </div>
 
   <!-- Table -->

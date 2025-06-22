@@ -1,51 +1,55 @@
-<div class="table-responsive">
+<div class="table-responsive position-relative">
 
-  <!-- Loading Spinner -->
-  <div *ngIf="isLoading" class="text-center my-4">
+  <!-- Unified Loading Overlay -->
+  <div *ngIf="isLoading" class="overlay d-flex justify-content-center align-items-center">
     <div class="spinner-border text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
 
-  <!-- Table of Members -->
-  <table class="table table-striped align-middle" *ngIf="!isLoading && members.length > 0">
+  <!-- Members Table -->
+  <table class="table table-hover table-bordered align-middle shadow-sm rounded overflow-hidden"
+    *ngIf="!isLoading && members.length > 0">
     <thead class="table-light">
       <tr>
-        <th>Name</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Houses</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Username</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Houses</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let member of members">
-        <td>
-          <div class="d-flex align-items-center gap-2">
-            <img *ngIf="member.profile_image; else placeholderIcon" [src]="member.profile_image" alt="Profile"
-              class="rounded-circle" width="32" height="32" />
+        <td class="text-center">
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <ng-container *ngIf="member.profile_image; else placeholderIcon">
+              <img [src]="member.profile_image" alt="Profile" class="rounded-circle border" width="32" height="32" />
+            </ng-container>
             <ng-template #placeholderIcon>
               <i class="fa-solid fa-user text-muted fs-5"></i>
             </ng-template>
             <span>{{ member.name }}</span>
           </div>
         </td>
-        <td>{{ member.username }}</td>
-        <td>{{ member.email }}</td>
+        <td class="text-center">{{ member.username }}</td>
+        <td class="text-center">{{ member.email }}</td>
         <td>
           <ng-container *ngIf="member.houses?.length; else noHouses">
-            <ul class="mb-0 ps-3">
-              <li *ngFor="let house of member.houses" class="d-flex justify-content-between align-items-center">
-                <span>
+            <ul class="list-unstyled mb-0">
+              <li *ngFor="let house of member.houses"
+                class="d-flex justify-content-between align-items-center py-1 px-2 bg-light rounded mb-1">
+                <span class="small text-dark">
                   {{ house.name }} ({{ house.city }}, {{ house.country }})
                 </span>
-                <button (click)="deleteUser(house.id, member.id)" class="btn btn-sm btn-outline-danger ms-3">
-                  Remove
+                <button (click)="deleteUser(house.id, member.id)" class="btn btn-sm btn-outline-danger ms-2"
+                  title="Remove">
+                  <i class="fa-solid fa-user-minus"></i>
                 </button>
               </li>
             </ul>
           </ng-container>
           <ng-template #noHouses>
-            <span class="text-muted">No houses</span>
+            <span class="text-muted d-block text-center">No houses</span>
           </ng-template>
         </td>
       </tr>
@@ -53,8 +57,8 @@
   </table>
 
   <!-- No Members Message -->
-  <div *ngIf="!isLoading && members.length === 0" class="text-center text-muted mt-3">
+  <div *ngIf="!isLoading && members.length === 0" class="text-center text-muted mt-4">
+    <i class="fa-solid fa-users fs-1 d-block mb-2"></i>
     No members to display.
   </div>
-
 </div>

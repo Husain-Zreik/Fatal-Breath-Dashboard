@@ -66,7 +66,6 @@ export class HouseManagement implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  searchText = '';
   sortField: keyof House = 'name';
   sortAsc = true;
   filteredHouses: House[] = [];
@@ -88,11 +87,6 @@ export class HouseManagement implements OnInit, AfterViewInit {
     });
   }
 
-  onSearch(event: Event): void {
-    this.searchText = (event.target as HTMLInputElement).value.toLowerCase();
-    this.applyFilters();
-  }
-
   sortBy(field: keyof House): void {
     if (this.sortField === field) {
       this.sortAsc = !this.sortAsc;
@@ -110,12 +104,7 @@ export class HouseManagement implements OnInit, AfterViewInit {
 
   applyFilters(): void {
     this.filteredHouses = this.houses
-      .filter((h) =>
-        [h.name, h.city, h.country]
-          .join(' ')
-          .toLowerCase()
-          .includes(this.searchText)
-      )
+      .filter((h) => [h.name, h.city, h.country].join(' ').toLowerCase())
       .sort((a, b) => {
         const valA = a[this.sortField]?.toString().toLowerCase() ?? '';
         const valB = b[this.sortField]?.toString().toLowerCase() ?? '';
