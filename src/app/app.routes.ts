@@ -39,14 +39,6 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'rooms',
-        data: { title: 'Room Management' },
-        loadComponent: () =>
-          import('./pages/rooms/room-management/room-management').then(
-            (m) => m.RoomManagement
-          ),
-      },
-      {
         path: 'users',
         data: { title: 'User Management' },
         loadComponent: () =>
@@ -55,13 +47,6 @@ export const routes: Routes = [
           ),
       },
     ],
-  },
-
-  // Non-layout route (dynamic detail view)
-  {
-    path: 'houses/:houseId/rooms',
-    loadComponent: () =>
-      import('./pages/room-view/room-view/room-view').then((m) => m.RoomView),
   },
 
   // Wildcard fallback
