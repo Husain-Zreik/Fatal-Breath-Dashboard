@@ -26,7 +26,6 @@
     }
   }
 
-  // Manager Navbar Styles
   .manager-navbar {
     display: flex;
     align-items: center;
@@ -46,7 +45,7 @@
       padding: 0.5rem;
       border-radius: 0.5rem;
       margin-right: 1rem;
-      display: none; // Hidden by default on desktop
+      display: none;
       transition: all 0.3s ease;
 
       &:hover {
@@ -91,6 +90,7 @@
 
   .sidebar {
     width: 15rem;
+    height: 100vh;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -98,21 +98,20 @@
     padding: 1.25rem;
     background-color: variables.$dark-background-secondary;
     color: variables.$dark-text;
-    overflow-y: auto;
+    overflow: hidden;
     z-index: 1000;
     font-size: variables.$font-size-sm;
     transform: translateX(0);
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
 
-    // Desktop: always visible
     @media (min-width: 769px) {
       transform: translateX(0);
     }
 
-    // Mobile: hidden by default, shown when open
     @media (max-width: 768px) {
       transform: translateX(-100%);
-
       &.open {
         transform: translateX(0);
       }
@@ -126,8 +125,16 @@
       text-align: center;
     }
 
+    .sidebar-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+
     .sidebar-section {
-      margin-bottom: 1.25rem;
+      flex-shrink: 0;
 
       h3 {
         color: variables.$dark-text-secondary;
@@ -156,15 +163,37 @@
         background-color: variables.$dark-background-tertiary;
         color: variables.$dark-text;
       }
+
+      .icon {
+        margin-right: 0.75rem;
+        font-size: 1.2rem;
+      }
     }
 
-    .icon {
-      margin-right: 0.75rem;
-      font-size: 1.2rem;
+    .sidebar-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1rem;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1.125rem;
+        color: variables.$danger;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.1);
+        }
+
+        .icon {
+          margin-right: 0.75rem;
+        }
+      }
     }
   }
 
-  // Mobile overlay for sidebar
   .overlay {
     position: fixed;
     top: 0;
@@ -180,7 +209,6 @@
     }
   }
 
-  // 📱 Responsive layout
   @media (max-width: 768px) {
     .main-content {
       margin-left: 0;

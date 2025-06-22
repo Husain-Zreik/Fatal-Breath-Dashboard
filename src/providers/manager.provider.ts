@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiService } from '../services/api.service';
+import { House } from '../models/house.model';
+import { Room } from '../models/room.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +20,7 @@ export class ManagerProvider {
     });
   }
 
-  loadHouses(): Observable<any> {
+  loadHouses(): Observable<{ houses: House[] }> {
     return this.api.sendRequest({
       method: 'GET',
       route: 'user/admin/get-houses',
@@ -53,22 +56,38 @@ export class ManagerProvider {
     });
   }
 
-  loadRoomsFromAdminHouses(houseId: number): Observable<any[]> {
+  deleteMember(houseId: number, userId: number): Observable<any> {
     return this.api.sendRequest({
-      method: 'GET',
-      route: 'user/admin/get-houses',
-    }).pipe(
-      map((response: any) => {
-        const houses = response.houses || [];
-        const house = houses.find((h: any) => h.id === houseId);
+      method: 'DELETE',
+      route: `user/manager/houses/${houseId}/members/${userId}`,
+    });
+  }
 
-        if (!house) return [];
-
-        return house.rooms.map((room: any) => ({
-          ...room,
-          houseName: house.name,
-        }));
+  getMembers(): Observable<User[]> {
+    return this.api
+      .sendRequest<{ members: User[] }>({
+        method: 'GET',
+        route: 'user/admin/members',
       })
-    );
+      .pipe(map((response) => response.members));
+  }
+
+  loadRoomsFromAdminHouses(houseId: number): Observable<Room[]> {
+    return this.api
+      .sendRequest<{ houses: House[] }>({
+        method: 'GET',
+        route: 'user/admin/get-houses',
+      })
+      .pipe(
+        map((response: { houses: House[] }) => {
+          const house = response.houses.find((h) => h.id === houseId);
+          return (
+            house?.rooms?.map((room) => ({
+              ...room,
+              houseName: house.name,
+            })) || []
+          );
+        })
+      );
   }
 }

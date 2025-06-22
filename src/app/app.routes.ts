@@ -5,11 +5,13 @@ export const routes: Routes = [
   // Auth pages without layout
   {
     path: '',
-    loadComponent: () => import('./pages/auth/login/login').then(m => m.Login),
+    loadComponent: () =>
+      import('./pages/auth/login/login').then((m) => m.Login),
   },
   {
     path: 'register',
-    loadComponent: () => import('./pages/auth/signup/signup').then(m => m.Signup),
+    loadComponent: () =>
+      import('./pages/auth/signup/signup').then((m) => m.Signup),
   },
 
   // Pages with layout
@@ -19,23 +21,33 @@ export const routes: Routes = [
     children: [
       {
         path: 'overview',
+        data: { title: 'Overview' },
         loadComponent: () =>
-          import('./pages/overview/overview').then(m => m.Overview),
+          import('./pages/overview/overview').then((m) => m.Overview),
       },
       {
         path: 'houses',
+        data: { title: 'House Management' },
         loadComponent: () =>
-          import('./pages/houses/house-management/house-management').then(m => m.HouseManagement),
+          import('./pages/houses/house-management/house-management').then(
+            (m) => m.HouseManagement
+          ),
       },
       {
         path: 'rooms',
+        data: { title: 'Room Management' },
         loadComponent: () =>
-          import('./pages/rooms/room-management/room-management').then(m => m.RoomManagement),
+          import('./pages/rooms/room-management/room-management').then(
+            (m) => m.RoomManagement
+          ),
       },
       {
         path: 'users',
+        data: { title: 'User Management' },
         loadComponent: () =>
-          import('./pages/users/user-management/user-management').then(m => m.UserManagement),
+          import('./pages/users/user-management/user-management').then(
+            (m) => m.UserManagement
+          ),
       },
     ],
   },
@@ -44,7 +56,7 @@ export const routes: Routes = [
   {
     path: 'houses/:houseId/rooms',
     loadComponent: () =>
-      import('./pages/room-view/room-view/room-view').then(m => m.RoomView),
+      import('./pages/room-view/room-view/room-view').then((m) => m.RoomView),
   },
 
   // Wildcard fallback

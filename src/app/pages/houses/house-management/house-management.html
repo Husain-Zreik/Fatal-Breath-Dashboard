@@ -1,1 +1,45 @@
-<p>house-management works!</p>
+<div class="table-responsive">
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="text-center my-4">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Houses Table -->
+  <table *ngIf="!isLoading && houses.length > 0" class="table table-striped align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>House Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let house of houses">
+        <td>{{ house.name }}</td>
+        <td>{{ house.city }}</td>
+        <td>{{ house.country }}</td>
+        <td>
+          <div class="d-flex gap-2">
+            <button (click)="navigateToRooms(house.id)" class="btn btn-sm btn-outline-primary">
+              <i class="fa-solid fa-th"></i> Rooms
+            </button>
+            <button (click)="confirmDeleteHouse(house.id)" class="btn btn-sm btn-outline-danger">
+              <i class="fa-solid fa-trash"></i> Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No Data -->
+  <div *ngIf="!isLoading && houses.length === 0" class="text-center text-muted mt-4">
+    <i class="fa-solid fa-house fs-1 d-block"></i>
+    <span class="d-block mt-2">No houses available yet.</span>
+  </div>
+
+</div>

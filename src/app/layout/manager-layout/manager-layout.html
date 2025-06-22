@@ -7,8 +7,8 @@
   </div>
 
   <main class="main-content">
-    <app-navbar [isOpen]="isSidebarOpen" [toggleSidebar]="toggleSidebar.bind(this)">
-    </app-navbar>
+    <app-navbar [isOpen]="isSidebarOpen" [toggleSidebar]="toggleSidebar.bind(this)" [title]="pageTitle"></app-navbar>
+
 
     <div class="main-inner">
       <router-outlet></router-outlet>

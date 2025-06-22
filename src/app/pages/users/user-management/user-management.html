@@ -1,1 +1,60 @@
-<p>user-management works!</p>
+<div class="table-responsive">
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="text-center my-4">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Table of Members -->
+  <table class="table table-striped align-middle" *ngIf="!isLoading && members.length > 0">
+    <thead class="table-light">
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Houses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of members">
+        <td>
+          <div class="d-flex align-items-center gap-2">
+            <img *ngIf="member.profile_image; else placeholderIcon" [src]="member.profile_image" alt="Profile"
+              class="rounded-circle" width="32" height="32" />
+            <ng-template #placeholderIcon>
+              <i class="fa-solid fa-user text-muted fs-5"></i>
+            </ng-template>
+            <span>{{ member.name }}</span>
+          </div>
+        </td>
+        <td>{{ member.username }}</td>
+        <td>{{ member.email }}</td>
+        <td>
+          <ng-container *ngIf="member.houses?.length; else noHouses">
+            <ul class="mb-0 ps-3">
+              <li *ngFor="let house of member.houses" class="d-flex justify-content-between align-items-center">
+                <span>
+                  {{ house.name }} ({{ house.city }}, {{ house.country }})
+                </span>
+                <button (click)="deleteUser(house.id, member.id)" class="btn btn-sm btn-outline-danger ms-3">
+                  Remove
+                </button>
+              </li>
+            </ul>
+          </ng-container>
+          <ng-template #noHouses>
+            <span class="text-muted">No houses</span>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No Members Message -->
+  <div *ngIf="!isLoading && members.length === 0" class="text-center text-muted mt-3">
+    No members to display.
+  </div>
+
+</div>
