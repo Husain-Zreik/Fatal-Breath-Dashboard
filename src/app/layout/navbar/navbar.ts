@@ -15,6 +15,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class Navbar {
   @Input() isOpen = false;
+  @Input() title: string = 'Dashboard';
   @Input() toggleSidebar!: () => void;
 
   constructor(library: FaIconLibrary) {
