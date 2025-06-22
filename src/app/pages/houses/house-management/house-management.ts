@@ -66,11 +66,17 @@ export class HouseManagement implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
+  searchText = '';
+  sortField: keyof House = 'name';
+  sortAsc = true;
+  filteredHouses: House[] = [];
+
   loadHouses(): void {
     this.isLoading = true;
     this.managerProvider.loadHouses().subscribe({
       next: (res) => {
         this.houses = res.houses || [];
+        this.applyFilters();
       },
       error: (err) => {
         console.error('Failed to load houses:', err);
@@ -78,10 +84,45 @@ export class HouseManagement implements OnInit, AfterViewInit {
           duration: 3000,
         });
       },
-      complete: () => {
-        this.isLoading = false;
-      },
+      complete: () => (this.isLoading = false),
     });
+  }
+
+  onSearch(event: Event): void {
+    this.searchText = (event.target as HTMLInputElement).value.toLowerCase();
+    this.applyFilters();
+  }
+
+  sortBy(field: keyof House): void {
+    if (this.sortField === field) {
+      this.sortAsc = !this.sortAsc;
+    } else {
+      this.sortField = field;
+      this.sortAsc = true;
+    }
+    this.applyFilters();
+  }
+
+  sortIcon(field: keyof House): string {
+    if (this.sortField !== field) return 'fa-sort';
+    return this.sortAsc ? 'fa-sort-up' : 'fa-sort-down';
+  }
+
+  applyFilters(): void {
+    this.filteredHouses = this.houses
+      .filter((h) =>
+        [h.name, h.city, h.country]
+          .join(' ')
+          .toLowerCase()
+          .includes(this.searchText)
+      )
+      .sort((a, b) => {
+        const valA = a[this.sortField]?.toString().toLowerCase() ?? '';
+        const valB = b[this.sortField]?.toString().toLowerCase() ?? '';
+        return this.sortAsc
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      });
   }
 
   navigateToRooms(houseId: number): void {
