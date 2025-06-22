@@ -13,6 +13,7 @@ import {
   faTachometerAlt,
   faBullhorn,
   faDesktop,
+  faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -31,6 +32,7 @@ export class Sidebar {
   faHome = faHome;
   faUser = faUser;
   faBell = faBell;
+  faSignOutAlt = faSignOutAlt;
   faTachometerAlt = faTachometerAlt;
   faBullhorn = faBullhorn;
   faDesktop = faDesktop;
@@ -43,7 +45,8 @@ export class Sidebar {
       faBell,
       faTachometerAlt,
       faBullhorn,
-      faDesktop
+      faDesktop,
+      faSignOutAlt
     );
   }
 
@@ -55,5 +58,10 @@ export class Sidebar {
     if (window.innerWidth <= 768) {
       this.closeSidebar?.();
     }
+  }
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigate(['/']);
   }
 }

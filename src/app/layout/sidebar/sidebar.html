@@ -1,7 +1,8 @@
 <aside class="sidebar" [class.open]="isOpen">
   <h1 class="sidebar-logo">Fatal Breath</h1>
-  <nav>
-    <div class="sidebar-section">
+
+  <div class="sidebar-content">
+    <nav class="sidebar-section">
       <h3>Dashboard</h3>
       <a routerLink="/overview" [class.active]="isActive('/overview')" (click)="handleLinkClick()">
         <fa-icon [icon]="faTachometerAlt" class="icon"></fa-icon>
@@ -13,8 +14,15 @@
       </a>
       <a routerLink="/users" [class.active]="isActive('/users')" (click)="handleLinkClick()">
         <fa-icon [icon]="faUser" class="icon"></fa-icon>
-        Users
+        Members
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a (click)="logout()">
+        <fa-icon [icon]="faBullhorn" class="icon"></fa-icon>
+        Logout
       </a>
     </div>
-  </nav>
+  </div>
 </aside>
